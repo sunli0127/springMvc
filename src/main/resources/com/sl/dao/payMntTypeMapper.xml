@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sl.dao.payMntTypeMapper">
+
+    <resultMap type="PayMntType" id="userMap">
+        <result column="type_id" property="typeId" jdbcType="INTEGER" />
+        <result column="type_name" property="typeName" jdbcType="VARCHAR" />
+        <result column="service_intf" property="serviceIntf" jdbcType="VARCHAR" />
+        <result column="type_category" property="typeCategory" jdbcType="INTEGER" />
+        <result column="type_status" property="typeStatus" jdbcType="CHAR" />
+        <result column="belong_sys" property="belongSys" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+        <result column="modify_person" property="modifyPerson" jdbcType="VARCHAR" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="find" parameterType="list" resultMap="userMap">
+        select * from pay_mnt_type where type_id in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+        #{id}
+        </foreach>
+    </select>
+</mapper>
