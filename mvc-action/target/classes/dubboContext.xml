@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        ">
+
+    <!-- 基础配置 -->
+    <dubbo:consumer check="${dubbo.comsumer.check}"
+        timeout="${dubbo.comsumer.timeout}" retries="${dubbo.comsumer.retries}"
+        loadbalance="${dubbo.comsumer.loadbalance}" version="${dubbo.comsumer.version}" />
+
+    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <dubbo:application name="${dubbo.comsumer.application.name}" />
+
+    <!-- 注册中心暴露发现服务地址 -->
+    <dubbo:registry address="${dubbo.comsumer.registry.address}"
+        check="true" />
+
+    <!-- 使用的协议 -->
+    <dubbo:protocol name="${dubbo.comsumer.protocol.name}" />
+
+    <!-- 生成远程服务代理 -->
+    <dubbo:reference id="dubboTest"
+        interface="com.sl.service.remote.DubboTestService"/>
+
+</beans>

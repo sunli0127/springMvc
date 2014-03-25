@@ -22,7 +22,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="springMvc" />
+        <module name="api-intf" />
+        <module name="api-service" />
+        <module name="mvc-action" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

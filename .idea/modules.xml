@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/api-intf/api-intf.iml" filepath="$PROJECT_DIR$/api-intf/api-intf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-service/api-service.iml" filepath="$PROJECT_DIR$/api-service/api-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mvc-action/mvc-action.iml" filepath="$PROJECT_DIR$/mvc-action/mvc-action.iml" />
       <module fileurl="file://$PROJECT_DIR$/springMvc.iml" filepath="$PROJECT_DIR$/springMvc.iml" />
     </modules>
   </component>
